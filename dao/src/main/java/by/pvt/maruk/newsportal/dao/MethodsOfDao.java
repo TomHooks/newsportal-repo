@@ -1,11 +1,9 @@
 package by.pvt.maruk.newsportal.dao;
 
-import by.pvt.maruk.newsportal.beans.Admin;
-import by.pvt.maruk.newsportal.beans.User;
+import by.pvt.maruk.beans.Admin;
+import by.pvt.maruk.beans.User;
 
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.*;
 import java.util.ResourceBundle;
 

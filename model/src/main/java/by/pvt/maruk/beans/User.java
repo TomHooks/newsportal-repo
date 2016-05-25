@@ -1,4 +1,4 @@
-package by.pvt.maruk.newsportal.beans;
+package by.pvt.maruk.beans;
 
 /**
  * Created by yura on 15.05.2016.
