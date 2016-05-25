@@ -10,10 +10,8 @@
           <element id="archive" name="dao-1.0-SNAPSHOT.jar">
             <element id="module-output" name="dao" />
           </element>
-          <element id="archive" name="model-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="model" />
-          </element>
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Maven: by.pvt.maruk:model:1.0-SNAPSHOT" />
         </element>
       </element>
       <element id="directory" name="META-INF">

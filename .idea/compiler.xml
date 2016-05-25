@@ -23,14 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="dao" />
-        <module name="model" />
         <module name="services" />
         <module name="web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dao" target="1.6" />
-      <module name="model" target="1.6" />
       <module name="newsportal" target="1.6" />
       <module name="services" target="1.6" />
       <module name="web" target="1.6" />
