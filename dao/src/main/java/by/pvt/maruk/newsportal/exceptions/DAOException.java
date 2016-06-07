@@ -1,5 +1,7 @@
 package by.pvt.maruk.newsportal.exceptions;
 
+
+
 import org.hibernate.HibernateException;
 
 /**
@@ -10,4 +12,5 @@ public class DAOException extends Exception{
     public DAOException(HibernateException e) {
         super(e);
     }
+
 }
