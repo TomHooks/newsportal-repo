@@ -1,4 +1,4 @@
-package by.pvt.maruk.newsportal.Implementations;
+package by.pvt.maruk.newsportal.implementations;
 
 import by.pvt.maruk.newsportal.beans.User;
 import by.pvt.maruk.newsportal.dao.UserDAO;

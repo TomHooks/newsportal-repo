@@ -7,6 +7,7 @@ import org.hibernate.cfg.AnnotationConfiguration;
  * Created by yura on 07.06.2016.
  */
 
+
 public class HibernateUtil {
 
     private static final SessionFactory SESSION_FACTORY;
