@@ -11,10 +11,12 @@
   <property name="hibernate.connection.username">root</property>
   <property name="hibernate.connection.password">root</property>
   <property name="show_sql">true</property>
-  <property name="default_schema">tests</property>
+  <property name="default_schema">newsportal</property>
   <property name="connection.pool_size">10</property>
+  <property name="current_session_context_class">thread</property>
+  <property name="hibernate.hbm2ddl.auto">create</property>
 
-  <mapping class="by.pvt.maruk.newsportal." />
+  <mapping class="by.pvt.maruk.newsportal.beans.User"/>
 
 </session-factory>
 </hibernate-configuration>
