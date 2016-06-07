@@ -1,18 +1,52 @@
 package by.pvt.maruk.beans;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * Created by yura on 15.05.2016.
  */
-public class User {
-    private String userName;
+@Entity
+@Table(name = "USERS")
+public class User implements Serializable {
+
+    private static final long SerialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    private int id;
+
+    @Column(name = "USER_LOGIN", unique = true, nullable = false)
+    private String userLogin;
+
+    @Column(name = "USER_PASSWORD")
     private String userPassword;
 
-    public String getUserName() {
-        return userName;
+    @Column(name = "USER_FIRST_NAME")
+    private String userFirstName;
+
+    @Column(name = "USER_LAST_NAME")
+    private String userLastName;
+
+    @Column(name = "USER_EMAIL")
+    private String userEmail;
+
+
+    public int getId() {
+        return id;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUserLogin() {
+        return userLogin;
+    }
+
+    public void setUserLogin(String userLogin) {
+        this.userLogin = userLogin;
     }
 
     public String getUserPassword() {
@@ -23,6 +57,30 @@ public class User {
         this.userPassword = userPassword;
     }
 
+    public String getUserFirstName() {
+        return userFirstName;
+    }
+
+    public void setUserFirstName(String userFirstName) {
+        this.userFirstName = userFirstName;
+    }
+
+    public String getUserLastName() {
+        return userLastName;
+    }
+
+    public void setUserLastName(String userLastName) {
+        this.userLastName = userLastName;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -30,12 +88,15 @@ public class User {
 
         User user = (User) o;
 
-        return userName != null ? userName.equals(user.userName) : user.userName == null;
+        if (userLogin != null ? !userLogin.equals(user.userLogin) : user.userLogin != null) return false;
+        return userPassword != null ? userPassword.equals(user.userPassword) : user.userPassword == null;
 
     }
 
     @Override
     public int hashCode() {
-        return userName != null ? userName.hashCode() : 0;
+        int result = userLogin != null ? userLogin.hashCode() : 0;
+        result = 31 * result + (userPassword != null ? userPassword.hashCode() : 0);
+        return result;
     }
 }
