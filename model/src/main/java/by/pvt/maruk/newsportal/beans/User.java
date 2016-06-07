@@ -1,4 +1,4 @@
-package by.pvt.maruk.beans;
+package by.pvt.maruk.newsportal.beans;
 
 import javax.persistence.*;
 import java.io.Serializable;

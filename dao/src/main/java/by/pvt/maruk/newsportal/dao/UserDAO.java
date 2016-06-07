@@ -1,6 +1,6 @@
 package by.pvt.maruk.newsportal.dao;
 
-import by.pvt.maruk.beans.User;
+import by.pvt.maruk.newsportal.beans.User;
 
 /**
  * Created by yura on 07.06.2016.
