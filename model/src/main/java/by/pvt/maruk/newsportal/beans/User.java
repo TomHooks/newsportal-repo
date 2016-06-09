@@ -10,8 +10,6 @@ import java.io.Serializable;
 @Table(name = "USERS")
 public class User implements Serializable {
 
-    static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
@@ -31,7 +29,6 @@ public class User implements Serializable {
 
     @Column(name = "USER_EMAIL")
     private String userEmail;
-
 
     public int getId() {
         return id;
