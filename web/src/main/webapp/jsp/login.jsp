@@ -39,7 +39,6 @@
     <tr><td><h3>Новости</h3></td></tr>
     <tr><td><c:forEach var="movie" items="${list}">
         ${movie}<br>
-
     </c:forEach></td></tr>
 </table>
 

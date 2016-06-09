@@ -16,7 +16,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         New mynew = new New();
-        mynew.setNewsTitle("Як ты?");
+        mynew.setNewsTitle("Добра");
         mynew.setNewsContent("tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt");
         mynew.setNewsDate(new Date());
         NewDAO newDAO  = new NewDAOImpl();

@@ -1,4 +1,4 @@
-package by.pvt.maruk.newsportal.servtest;
+package by.pvt.maruk.newsportal.testserv;
 
 import by.pvt.maruk.newsportal.beans.New;
 import by.pvt.maruk.newsportal.dao.NewDAO;
