@@ -7,6 +7,7 @@ import by.pvt.maruk.newsportal.implementations.NewDAOImpl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         New mynew = new New();
-        mynew.setNewsTitle("Demobilizacia!");
+        mynew.setNewsTitle("Ok!");
         mynew.setNewsContent("tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt");
         mynew.setNewsDate(new Date());
         NewDAO newDAO  = new NewDAOImpl();
@@ -29,6 +30,11 @@ public class Main {
            listOfNews =  newDAO.getNews();
         } catch (DAOException e) {
             e.printStackTrace();
+        }
+
+        Iterator<New> iterator = listOfNews.iterator();
+        while(iterator.hasNext()) {
+           System.out.println(iterator.next());
         }
 
 

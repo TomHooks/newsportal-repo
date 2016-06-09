@@ -84,9 +84,6 @@ public class New implements Serializable {
 
     @Override
     public String toString() {
-        return "New{" +
-                "newsTitle='" + newsTitle + '\'' +
-                ", newsDate=" + newsDate +
-                '}';
+        return newsDate + " " + newsTitle;
     }
 }
