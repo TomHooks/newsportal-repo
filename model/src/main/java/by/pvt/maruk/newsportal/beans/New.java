@@ -26,7 +26,7 @@ public class New implements Serializable {
     private String newsContent;
 
     @Column(name = "NEWS_DATE")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date newsDate;
 
     public int getId() {

@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: yura
@@ -5,8 +7,8 @@
   Time: 10:01
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>--%>
 <html>
 <head>
     <title>Главная страница</title>
@@ -35,10 +37,10 @@
 </form>
 <table>
     <tr><td><h3>Новости</h3></td></tr>
-    <tr><td>Новость 1 ЗДЕСЬ ОЧЕНЬ КРУТАЯ НОВОСТЬ!!!<br/>
-       Новость 2<br/>
-       Новость 3<br/>
-        Новость 4</td></tr>
+    <tr><td><c:forEach var="movie" items="${list}">
+        ${movie}<br>
+
+    </c:forEach></td></tr>
 </table>
 
 </body>

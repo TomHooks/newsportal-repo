@@ -16,7 +16,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         New mynew = new New();
-        mynew.setNewsTitle("Ok!");
+        mynew.setNewsTitle("Як ты?");
         mynew.setNewsContent("tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt");
         mynew.setNewsDate(new Date());
         NewDAO newDAO  = new NewDAOImpl();
@@ -25,17 +25,17 @@ public class Main {
         } catch (DAOException e) {
             e.printStackTrace();
         }
-        List<New> listOfNews = new ArrayList<New>();
+       /* List<New> listOfNews = new ArrayList<New>();
         try {
            listOfNews =  newDAO.getNews();
         } catch (DAOException e) {
             e.printStackTrace();
-        }
+        }*/
 
-        Iterator<New> iterator = listOfNews.iterator();
+        /*Iterator<New> iterator = listOfNews.iterator();
         while(iterator.hasNext()) {
            System.out.println(iterator.next());
-        }
+        }*/
 
 
     }

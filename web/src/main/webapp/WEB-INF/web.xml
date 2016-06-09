@@ -23,10 +23,18 @@
         <filter-name>ServletSecurityFilter</filter-name>
         <servlet-name>Controller</servlet-name>
     </filter-mapping>
-
+    <servlet>
+        <servlet-name>Formalnii</servlet-name>
+        <servlet-class>by.pvt.maruk.newsportal.servtest.FormalniiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Formalnii</servlet-name>
+        <url-pattern>/Formalnii</url-pattern>
+    </servlet-mapping>
+    
     <error-page>
         <error-code>404</error-code>
-        <location>/web/src/main/webapp/jsp/error/error.jsp</location>
+        <location>/jsp/error/error.jsp</location>
     </error-page>
 
 </web-app>

@@ -6,13 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%--формальная страница--%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
-  <head>
-    <title>Index</title>
-  </head>
-  <body>
-  <jsp:forward page="jsp/login.jsp"/>
-
-  </body>
-</html>
+<head><title>Index</title></head>
+<body>
+<jsp:forward page="/Formalnii"/>
+</body></html>
