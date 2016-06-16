@@ -25,7 +25,7 @@
     </filter-mapping>
     <servlet>
         <servlet-name>Formalnii</servlet-name>
-        <servlet-class>by.pvt.maruk.newsportal.testserv.FormalniiServlet</servlet-class>
+        <servlet-class>by.pvt.maruk.newsportal.controller.FormalniiServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Formalnii</servlet-name>
