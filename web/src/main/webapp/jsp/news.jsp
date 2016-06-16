@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: yura
@@ -11,6 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello World</h1>
+<h1>Hello World</h1><br>
+Параметр id= ${id};
 </body>
 </html>

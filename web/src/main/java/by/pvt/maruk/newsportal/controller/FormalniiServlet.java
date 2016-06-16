@@ -44,6 +44,7 @@ public class FormalniiServlet extends HttpServlet {
                 e.printStackTrace();
             }
         } else {
+            request.setAttribute("id", s);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/news.jsp");
             try {
                 dispatcher.forward(request, response);
