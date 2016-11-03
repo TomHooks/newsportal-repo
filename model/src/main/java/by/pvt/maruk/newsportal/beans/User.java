@@ -31,7 +31,7 @@ public class User implements Serializable {
     @Column(name = "USER_EMAIL")
     private String userEmail;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<New> newsSet;
 
     public Set<New> getNewsSet() {

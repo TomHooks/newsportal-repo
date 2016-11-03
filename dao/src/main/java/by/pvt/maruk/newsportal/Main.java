@@ -8,10 +8,7 @@ import by.pvt.maruk.newsportal.exceptions.DAOException;
 import by.pvt.maruk.newsportal.implementations.NewDAOImpl;
 import by.pvt.maruk.newsportal.implementations.UserDAOImpl;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by yura on 09.06.2016.
@@ -47,17 +44,33 @@ public class Main {
         }
 
         System.out.println(mynew);*/
-        int z = 1;
-       NewDAO myNew = new NewDAOImpl();
-        try {
-            List<New> newsList =  myNew.getNewsByUser(z);
-            Iterator<New> iterator = newsList.iterator();
+//        int z = 1;
+//       NewDAO myNew = new NewDAOImpl();
+//        try {
+//            List<New> newsList =  myNew.getNewsByUser(z);
+//            Iterator<New> iterator = newsList.iterator();
+//            while (iterator.hasNext()) {
+//                System.out.println(iterator.next());
+//            }
+//        } catch (DAOException e) {
+//            e.printStackTrace();
+//        }
+
+        UserDAO myUser = new UserDAOImpl();
+        int x =2;
+        try { User newUser;
+            newUser = myUser.gerUserById(x);
+            Set<New> newSet = newUser.getNewsSet();
+            Iterator<New> iterator = newSet.iterator();
             while (iterator.hasNext()) {
                 System.out.println(iterator.next());
             }
+
         } catch (DAOException e) {
             e.printStackTrace();
         }
+
+
 
 
     }
