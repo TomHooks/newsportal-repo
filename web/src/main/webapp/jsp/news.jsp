@@ -12,7 +12,14 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello World</h1><br>
-Параметр id= ${id};
+
+<c:if test="${userType == USER}">
+
+</c:if>
+
+<h1><c:out value="${newOf.newsTitle}"/></h1><br>
+<c:out value="${newOf.newsDate}"/><br>
+<c:out value="${newOf.newsContent}"/>
+
 </body>
 </html>

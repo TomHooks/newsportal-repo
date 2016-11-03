@@ -29,6 +29,10 @@ public class New implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date newsDate;
 
+    @ManyToOne
+    @JoinColumn(name = "F_USERS_ID")
+    private User user;
+
     public int getId() {
         return id;
     }

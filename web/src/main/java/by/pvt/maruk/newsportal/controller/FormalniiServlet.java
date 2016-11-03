@@ -3,6 +3,7 @@ package by.pvt.maruk.newsportal.controller;
 import by.pvt.maruk.newsportal.beans.New;
 import by.pvt.maruk.newsportal.dao.NewDAO;
 import by.pvt.maruk.newsportal.exceptions.DAOException;
+import by.pvt.maruk.newsportal.filter.ClientType;
 import by.pvt.maruk.newsportal.implementations.NewDAOImpl;
 
 import javax.servlet.RequestDispatcher;
@@ -43,8 +44,20 @@ public class FormalniiServlet extends HttpServlet {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else {
+        }
+        else {
+
+            int selectedNewsId = Integer.parseInt(request.getParameter("selectedNewsId"));
+            New newOfNew = null;
+
+            try {
+                newOfNew = new NewDAOImpl().getNewById(selectedNewsId);
+            } catch (DAOException e) {
+                e.printStackTrace();
+            }
+
             request.setAttribute("id", s);
+            request.setAttribute("newOf", newOfNew);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/news.jsp");
             try {
                 dispatcher.forward(request, response);
@@ -55,6 +68,7 @@ public class FormalniiServlet extends HttpServlet {
             }
         }
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);

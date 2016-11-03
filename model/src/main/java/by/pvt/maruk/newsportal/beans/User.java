@@ -2,6 +2,7 @@ package by.pvt.maruk.newsportal.beans;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by yura on 15.05.2016.
@@ -29,6 +30,17 @@ public class User implements Serializable {
 
     @Column(name = "USER_EMAIL")
     private String userEmail;
+
+    @OneToMany(mappedBy = "user")
+    private Set<New> newsSet;
+
+    public Set<New> getNewsSet() {
+        return newsSet;
+    }
+
+    public void setNewsSet(Set<New> newsSet) {
+        this.newsSet = newsSet;
+    }
 
     public int getId() {
         return id;

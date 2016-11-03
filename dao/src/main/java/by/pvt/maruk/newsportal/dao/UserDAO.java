@@ -9,5 +9,5 @@ import by.pvt.maruk.newsportal.exceptions.DAOException;
 public interface UserDAO {
 
     void addUser(User user) throws DAOException;
-    User getUserPassword(String userLogin) throws DAOException;
+    String getUserPassword(String userLogin) throws DAOException;
 }
