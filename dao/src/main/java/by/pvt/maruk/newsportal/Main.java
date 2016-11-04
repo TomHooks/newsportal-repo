@@ -56,20 +56,20 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
-        UserDAO myUser = new UserDAOImpl();
-        int x = 3;
-        try {
-            User newUser;
-            newUser = myUser.gerUserById(x);
-            Set<New> newSet = newUser.getNewsSet();
-            Iterator<New> iterator = newSet.iterator();
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next());
-            }
-
-        } catch (DAOException e) {
-            e.printStackTrace();
-        }
+//        UserDAO myUser = new UserDAOImpl();
+//        int x = 3;
+//        try {
+//            User newUser;
+//            newUser = myUser.gerUserById(x);
+//            Set<New> newSet = newUser.getNewsSet();
+//            Iterator<New> iterator = newSet.iterator();
+//            while (iterator.hasNext()) {
+//                System.out.println(iterator.next());
+//            }
+//
+//        } catch (DAOException e) {
+//            e.printStackTrace();
+//        }
 
 
     }
