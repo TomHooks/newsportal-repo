@@ -13,8 +13,6 @@ public interface NewDAO {
 
     List<New> getNews() throws DAOException;
 
-    List<New> getNewsByUser(int i) throws DAOException;
-
     void addNew(New mynew) throws DAOException;
 
     New getNewById(int id) throws DAOException;

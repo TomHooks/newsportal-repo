@@ -31,6 +31,7 @@ public class User implements Serializable {
     @Column(name = "USER_EMAIL")
     private String userEmail;
 
+//    fetch.Lazy - razberis!
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<New> newsSet;
 

@@ -57,8 +57,9 @@ public class Main {
 //        }
 
         UserDAO myUser = new UserDAOImpl();
-        int x =2;
-        try { User newUser;
+        int x = 3;
+        try {
+            User newUser;
             newUser = myUser.gerUserById(x);
             Set<New> newSet = newUser.getNewsSet();
             Iterator<New> iterator = newSet.iterator();
@@ -71,9 +72,7 @@ public class Main {
         }
 
 
-
-
     }
 
-    }
+}
 

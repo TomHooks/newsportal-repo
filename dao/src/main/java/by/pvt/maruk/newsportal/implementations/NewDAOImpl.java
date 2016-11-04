@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by yura on 09.06.2016.
  */
-public class NewDAOImpl implements NewDAO{
+public class NewDAOImpl implements NewDAO {
 
     @Override
     public List<New> getNews() throws DAOException {
@@ -26,28 +26,6 @@ public class NewDAOImpl implements NewDAO{
         try {
             transaction = session.beginTransaction();
             Criteria criteria = session.createCriteria(New.class);
-            result = (List<New>) criteria.list();
-            transaction.commit();
-        } catch (HibernateException e) {
-            if (transaction != null) transaction.rollback();
-            e.printStackTrace();
-            throw new DAOException(e);
-        } finally {
-            session.close();
-        }
-        return result;
-    }
-
-    @Override
-    public List<New> getNewsByUser(int i) throws DAOException {
-        List<New> result = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = null;
-
-        try {
-            transaction = session.beginTransaction();
-            Criteria criteria = session.createCriteria(New.class);
-            criteria.add(Restrictions.eq("F_USERS_ID", i));
             result = (List<New>) criteria.list();
             transaction.commit();
         } catch (HibernateException e) {
@@ -87,7 +65,7 @@ public class NewDAOImpl implements NewDAO{
         try {
             transaction = session.beginTransaction();
 
-            result = (New) session.get(New.class,id);
+            result = (New) session.get(New.class, id);
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
