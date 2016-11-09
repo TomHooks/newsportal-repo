@@ -11,6 +11,15 @@
         <servlet-name>Controller</servlet-name>
         <servlet-class>by.pvt.maruk.newsportal.controller.Controller</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MyController</servlet-name>
+        <servlet-class>by.pvt.maruk.newsportal.controller.MyController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyController</servlet-name>
+        <url-pattern>/MyController</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>Controller</servlet-name>
         <url-pattern>/controller</url-pattern>
@@ -31,7 +40,15 @@
         <servlet-name>Formalnii</servlet-name>
         <url-pattern>/Formalnii</url-pattern>
     </servlet-mapping>
-    
+
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>by.pvt.maruk.newsportal.filter.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/MyFilter</url-pattern>
+    </filter-mapping>
     <error-page>
         <error-code>404</error-code>
         <location>/jsp/error/error.jsp</location>
