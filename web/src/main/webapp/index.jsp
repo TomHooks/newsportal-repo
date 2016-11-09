@@ -10,5 +10,5 @@
 <html>
 <head><title>Index</title></head>
 <body>
-<jsp:forward page="/Formalnii"></jsp:forward>
+<jsp:forward page="MyController"></jsp:forward>
 </body></html>
