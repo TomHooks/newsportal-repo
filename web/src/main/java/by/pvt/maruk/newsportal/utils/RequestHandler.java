@@ -25,7 +25,7 @@ public class RequestHandler {
             RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(page);
             dispatcher.forward(request, response);
         } else {
-            page = ConfigurationManager.getInstance().getProperty(PagePath.INDEX_PAGE_PATH);
+            page = ConfigurationManager.getInstance().getProperty(PagePath.REGISTRATION_PAGE_PATH);
             response.sendRedirect(request.getContextPath() + page);
         }
     }

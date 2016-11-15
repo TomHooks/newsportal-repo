@@ -1,4 +1,4 @@
-package by.pvt.maruk.newsportal.commands.impl.client;
+package by.pvt.maruk.newsportal.commands.impl.guest;
 
 import by.pvt.maruk.newsportal.commands.AbstractCommand;
 

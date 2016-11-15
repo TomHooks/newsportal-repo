@@ -1,7 +1,7 @@
 package by.pvt.maruk.newsportal.commands.factory;
 
 import by.pvt.maruk.newsportal.commands.ICommand;
-import by.pvt.maruk.newsportal.commands.impl.client.LoginUserCommand;
+import by.pvt.maruk.newsportal.commands.impl.guest.LoginUserCommand;
 import by.pvt.maruk.newsportal.utils.RequestParameterParser;
 
 import javax.servlet.http.HttpServletRequest;
