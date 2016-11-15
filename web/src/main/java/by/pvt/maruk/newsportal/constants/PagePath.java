@@ -5,4 +5,5 @@ package by.pvt.maruk.newsportal.constants;
  */
 public class PagePath {
     public static final String INDEX_PAGE_PATH = "path.page.index";
+    public static final String REGISTRATION_PAGE_PATH = "path.page.registration";
 }

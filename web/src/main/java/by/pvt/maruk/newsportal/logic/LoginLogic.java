@@ -11,7 +11,7 @@ import by.pvt.maruk.newsportal.implementations.UserDAOImpl;
  * Created by yura on 14.05.2016.
  */
 public class LoginLogic {
-    private final static String ADMIN_LOGIN = "admin";
+    private final static String ADMIN_LOGIN = "moderator";
     private final static String ADMIN_PASS = "123";
 
 

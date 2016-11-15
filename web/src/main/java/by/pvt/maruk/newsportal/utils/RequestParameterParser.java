@@ -1,7 +1,7 @@
 package by.pvt.maruk.newsportal.utils;
 
 import by.pvt.maruk.newsportal.constants.Parameters;
-import by.pvt.maruk.newsportal.factory.CommandType;
+import by.pvt.maruk.newsportal.commands.factory.CommandType;
 import by.pvt.maruk.newsportal.filter.ClientType;
 
 import javax.servlet.http.HttpServletRequest;

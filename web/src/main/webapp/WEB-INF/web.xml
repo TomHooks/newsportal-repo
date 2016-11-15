@@ -24,14 +24,8 @@
         <servlet-name>Controller</servlet-name>
         <url-pattern>/controller</url-pattern>
     </servlet-mapping>
-    <filter>
-        <filter-name>ServletSecurityFilter</filter-name>
-        <filter-class>by.pvt.maruk.newsportal.filter.ServletSecurityFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>ServletSecurityFilter</filter-name>
-        <servlet-name>Controller</servlet-name>
-    </filter-mapping>
+
+
     <servlet>
         <servlet-name>Formalnii</servlet-name>
         <servlet-class>by.pvt.maruk.newsportal.controller.FormalniiServlet</servlet-class>

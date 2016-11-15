@@ -1,7 +1,7 @@
 package by.pvt.maruk.newsportal.filter;
 
 import by.pvt.maruk.newsportal.constants.PagePath;
-import by.pvt.maruk.newsportal.factory.CommandType;
+import by.pvt.maruk.newsportal.commands.factory.CommandType;
 import by.pvt.maruk.newsportal.resource.ConfigurationManager;
 import by.pvt.maruk.newsportal.utils.RequestParameterParser;
 
@@ -26,24 +26,29 @@ public class MyFilter implements Filter {
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         HttpSession httpSession = httpServletRequest.getSession();
         ClientType clientType = RequestParameterParser.getClientType(httpServletRequest);
-        CommandType commandType = RequestParameterParser.getCommandType(httpServletRequest);
-        if (clientType == null) {
-            if (commandType == CommandType.LOGIN) {
-                filterChain.doFilter(servletRequest, servletResponse);
-            } else if (commandType == CommandType.GOTOREGISTRATION) {
-                filterChain.doFilter(servletRequest, servletResponse);
+
+        try {
+            CommandType commandType = RequestParameterParser.getCommandType(httpServletRequest);
+            if (clientType == null) {
+                if (commandType == CommandType.LOGIN) {
+                    filterChain.doFilter(servletRequest, servletResponse);
+                } else if (commandType == CommandType.GOTOREGISTRATION) {
+                    filterChain.doFilter(servletRequest, servletResponse);
+                } else {
+                    String page = ConfigurationManager.getInstance().getProperty(PagePath.INDEX_PAGE_PATH);
+                    RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher(page);
+                    dispatcher.forward(httpServletRequest, httpServletResponse);
+                    httpSession.invalidate();
+                }
+
             } else {
-                String page = ConfigurationManager.getInstance().getProperty(PagePath.INDEX_PAGE_PATH);
-                RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher(page);
-                dispatcher.forward(httpServletRequest, httpServletResponse);
-                httpSession.invalidate();
+                filterChain.doFilter(servletRequest, servletResponse);
             }
-
-        } else {
-            filterChain.doFilter(servletRequest, servletResponse);
+        } catch (IllegalArgumentException e) {
+            String page = ConfigurationManager.getInstance().getProperty(PagePath.INDEX_PAGE_PATH);
+            RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher(page);
+            dispatcher.forward(httpServletRequest, httpServletResponse);
         }
-
-
     }
 
     @Override
