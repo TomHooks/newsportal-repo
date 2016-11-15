@@ -24,7 +24,7 @@ public class LoginCommand implements ActionCommand {
         if (LoginLogic.checkAdminLogin(login, pass)) {
             request.setAttribute("user", login);
             HttpSession session = request.getSession(true);
-            session.setAttribute("userType", ClientType.ADMINISTRATOR);
+//            session.setAttribute("userType", ClientType.ADMINISTRATOR);
 
             page = ConfigurationManager.getProperty("path.page.main");
         } else if (LoginLogic.checkUserLogin(login, pass)) {
@@ -34,7 +34,7 @@ public class LoginCommand implements ActionCommand {
             page = ConfigurationManager.getProperty("path.page.user");
         } else {
             request.setAttribute("errorLoginPassMessage", MessageManager.getProperty("message.loginerror"));
-            request.getSession().setAttribute("userType", ClientType.GUEST);
+//            request.getSession().setAttribute("userType", ClientType.GUEST);
             page = ConfigurationManager.getProperty("path.page.login");
         }
         return page;
