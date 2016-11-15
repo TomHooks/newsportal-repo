@@ -30,7 +30,7 @@ public class LoginCommand implements ActionCommand {
         } else if (LoginLogic.checkUserLogin(login, pass)) {
             request.setAttribute("user", login);
             HttpSession session = request.getSession(true);
-            session.setAttribute("userType", ClientType.USER);
+//            session.setAttribute("userType", ClientType.USER);
             page = ConfigurationManager.getProperty("path.page.user");
         } else {
             request.setAttribute("errorLoginPassMessage", MessageManager.getProperty("message.loginerror"));
