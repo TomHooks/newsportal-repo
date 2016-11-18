@@ -6,7 +6,7 @@
     <title>Registration</title>
 </head>
 <body>
-<form name="registrationForm" method="post" action="/MyController">
+<form name="registrationForm" method="post" action="myController">
     <input type="hidden" name="command" value="registration"/>
     Введите ваши данные:<br/>
     <table>
@@ -36,6 +36,7 @@
     ${errorUserExists} <br/>
     <input type="submit" value="Зарегистрировать"/>
     <a href="controller?command=back">Вернуться обратно</a>
+
 </form>
 
 </body>

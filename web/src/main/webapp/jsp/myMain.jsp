@@ -13,8 +13,8 @@
     <title>Авторизация</title>
 </head>
 <body>
-<form name="loginForm" method="post" action="/MyController">
-    <input type="hidden" name="command" value="login" />
+<form name="loginForm" method="post" action="/myController">
+    <input type="hidden" name="command" value="login"/>
     Введите ваш логин и пароль: <br/>
     <table>
         <tr>
@@ -23,12 +23,12 @@
         </tr>
         <tr>
             <td>Пароль:</td>
-            <td><input type="password" name="password" value="" size="20" /></td>
+            <td><input type="password" name="password" value="" size="20"/></td>
         </tr>
     </table>
-    ${errorLoginOrPassword} <br />
-    <input type="submit" value="Войти" />
-    <a href="MyController?command=gotoregistration">Регистрация</a>
+    ${errorLoginOrPassword} <br/>
+    <input type="submit" value="Войти"/>
+    <a href="myController?command=gotoregistration">Регистрация</a>
 </form>
 </body>
 </html>
