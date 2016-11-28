@@ -14,7 +14,7 @@
     <title>Авторизация</title>
 </head>
 <body>
-<form name="loginForm" method="post" action="/myController">
+<form name="loginForm" method="post" action="myController">
     <input type="hidden" name="command" value="login"/>
     Введите ваш логин и пароль: <br/>
     <table>

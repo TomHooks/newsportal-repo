@@ -19,7 +19,7 @@ public class RequestParameterParser {
 
     public static CommandType getCommandType(HttpServletRequest httpServletRequest) {
         String commandName = httpServletRequest.getParameter(Parameters.COMMAND);
-        CommandType commandType = CommandType.LOGIN;
+        CommandType commandType = CommandType.EMPTY;
         if (commandName != null) {
             commandType = CommandType.valueOf(commandName.toUpperCase());
         }
