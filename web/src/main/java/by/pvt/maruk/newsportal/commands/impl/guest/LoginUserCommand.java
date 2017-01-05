@@ -13,6 +13,7 @@ import by.pvt.maruk.newsportal.resource.ConfigurationManager;
 import by.pvt.maruk.newsportal.resource.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by yura on 10.11.2016.
@@ -23,13 +24,16 @@ public class LoginUserCommand extends AbstractCommand {
         String page = null;
         UserDAO userDAO = new UserDAOImpl();
         try {
+            User user = userDAO.getUserByLogin(httpServletRequest.getParameter(Parameters.LOGIN));
             String guestPassword = httpServletRequest.getParameter(Parameters.PASSWORD);
             String authorPassword = userDAO.getUserPassword(httpServletRequest.getParameter(Parameters.LOGIN));
             if (guestPassword.equals(authorPassword)) {
                 page = ConfigurationManager.getInstance().getProperty(PagePath.USER_PAGE_PATH);
                 ClientType clientType = ClientType.AUTHOR;
-                httpServletRequest.setAttribute(Parameters.CLIENT_TYPE, clientType);
-                httpServletRequest.setAttribute(Parameters.USER, httpServletRequest.getParameter(Parameters.LOGIN));
+                HttpSession session = httpServletRequest.getSession();
+                session.setAttribute(Parameters.CLIENT_TYPE, clientType);
+                session.setAttribute(Parameters.USER, user);
+                httpServletRequest.setAttribute(Parameters.USER_LOGIN, httpServletRequest.getParameter(Parameters.LOGIN));
 
             } else {
                 page = ConfigurationManager.getInstance().getProperty(PagePath.MAIN_PAGE_PATH);

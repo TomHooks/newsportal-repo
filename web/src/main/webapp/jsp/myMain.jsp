@@ -30,6 +30,21 @@
     ${errorLoginOrPassword} <br/>
     <input type="submit" value="Войти"/>
     <a href="<c:url value="/myController?command=gotoregistration"/>">Регистрация</a>
+    <a href="<c:url value="/myController?command=gotohowguest"/>">Войти как гость</a>
 </form>
+<%--<table>
+    <tr>
+        <td><h3>Новости</h3></td>
+    </tr>
+    <tr>
+        <td><c:forEach var="news" items="${news}">
+            <a href="<c:url value="/myController">
+        <c:param name="selectedNewsId" value="${news.id}" />
+        </c:url>">
+                <c:out value="${news.newsTitle}"/>
+            </a><br>
+        </c:forEach></td>
+    </tr>
+</table>--%>
 </body>
 </html>

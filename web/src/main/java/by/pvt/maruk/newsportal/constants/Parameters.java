@@ -11,6 +11,11 @@ public class Parameters {
     public static final String PASSWORD = "password";
     public static final String ERROR_LOGIN_OR_PASSWORD = "errorLoginOrPassword";
     public static final String USER = "user";
+    public static final String USER_LOGIN = "userLogin";
+    public static final String NEW_LIST = "news";
+    public static final String TITLE = "title";
+    public static final String CONTENT = "content";
+
 
 
 }

@@ -33,6 +33,8 @@ public class New implements Serializable {
     @JoinColumn(name = "F_USERS_ID")
     private User user;
 
+
+
     public int getId() {
         return id;
     }
@@ -63,6 +65,14 @@ public class New implements Serializable {
 
     public void setNewsDate(Date newsDate) {
         this.newsDate = newsDate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

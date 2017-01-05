@@ -70,6 +70,14 @@ public class Main {
 //        } catch (DAOException e) {
 //            e.printStackTrace();
 //        }
+        User user = null;
+        UserDAO userDAO = new UserDAOImpl();
+        try {
+            user = userDAO.getUserByLogin("z");
+        } catch (DAOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(user.getUserPassword());
 
 
     }

@@ -17,14 +17,36 @@ import org.hibernate.criterion.Restrictions;
  */
 public class UserDAOImpl implements UserDAO {
     @Override
-    public User gerUserById(int id) throws DAOException {
+        public User getUserById(int id) throws DAOException {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            Transaction transaction = null;
+            User result = new User();
+            try {
+                transaction = session.beginTransaction();
+
+                result = (User) session.get(User.class,id);
+                transaction.commit();
+            } catch (HibernateException e) {
+                if (transaction != null) transaction.rollback();
+                e.printStackTrace();
+                throw new DAOException(e);
+            } finally {
+                session.close();
+            }
+            return result;
+    }
+
+    @Override
+    public User getUserByLogin(String userLogin) throws DAOException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
         User result = new User();
         try {
             transaction = session.beginTransaction();
 
-            result = (User) session.get(User.class,id);
+            Criteria criteria = session.createCriteria(User.class);
+            criteria.add(Restrictions.eq("userLogin",userLogin));
+           result = (User) criteria.uniqueResult();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
@@ -35,7 +57,6 @@ public class UserDAOImpl implements UserDAO {
         }
         return result;
     }
-
     @Override
     public void addUser(User user) throws DAOException {
         Session session = HibernateUtil.getSessionFactory().openSession();

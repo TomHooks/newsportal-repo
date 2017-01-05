@@ -33,6 +33,7 @@ public class User implements Serializable {
 
 //    fetch.Lazy - razberis!
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    // TODO: 05.01.2017 Set заменить на List 
     private Set<New> newsSet;
 
     public Set<New> getNewsSet() {
