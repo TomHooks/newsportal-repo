@@ -70,7 +70,7 @@ public class Main {
 //        } catch (DAOException e) {
 //            e.printStackTrace();
 //        }
-        User user = null;
+      /*  User user = null;
         UserDAO userDAO = new UserDAOImpl();
         try {
             user = userDAO.getUserByLogin("z");
@@ -78,7 +78,7 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println(user.getUserPassword());
-
+*/
 
     }
 

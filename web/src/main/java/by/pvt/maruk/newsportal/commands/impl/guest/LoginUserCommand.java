@@ -21,10 +21,13 @@ import javax.servlet.http.HttpSession;
 public class LoginUserCommand extends AbstractCommand {
     @Override
     public String execute(HttpServletRequest httpServletRequest) {
-        String page = null;
+        String page;
         UserDAO userDAO = new UserDAOImpl();
+        User user;
         try {
-            User user = userDAO.getUserByLogin(httpServletRequest.getParameter(Parameters.LOGIN));
+            String login = httpServletRequest.getParameter(Parameters.LOGIN);
+
+            user = userDAO.getUserByLogin(login);
             String guestPassword = httpServletRequest.getParameter(Parameters.PASSWORD);
             String authorPassword = userDAO.getUserPassword(httpServletRequest.getParameter(Parameters.LOGIN));
             if (guestPassword.equals(authorPassword)) {

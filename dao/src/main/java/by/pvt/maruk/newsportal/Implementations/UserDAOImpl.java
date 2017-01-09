@@ -46,7 +46,7 @@ public class UserDAOImpl implements UserDAO {
 
             Criteria criteria = session.createCriteria(User.class);
             criteria.add(Restrictions.eq("userLogin",userLogin));
-           result = (User) criteria.uniqueResult();
+            result = (User) criteria.uniqueResult();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
@@ -57,6 +57,7 @@ public class UserDAOImpl implements UserDAO {
         }
         return result;
     }
+
     @Override
     public void addUser(User user) throws DAOException {
         Session session = HibernateUtil.getSessionFactory().openSession();

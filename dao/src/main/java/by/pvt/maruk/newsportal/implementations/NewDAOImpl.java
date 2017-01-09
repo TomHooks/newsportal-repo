@@ -40,12 +40,12 @@ public class NewDAOImpl implements NewDAO {
 
 
     @Override
-    public void addNew(New mynew) throws DAOException {
+    public void addNew(New aNew) throws DAOException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            session.save(mynew);
+            session.save(aNew);
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
